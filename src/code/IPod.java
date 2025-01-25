@@ -1,0 +1,2 @@
+public class IPod {
+}
