@@ -1,3 +1,5 @@
+package ca.bcit.comp2522.lab3;
+
 public abstract class IDevice {
 
     private final String purpose;
