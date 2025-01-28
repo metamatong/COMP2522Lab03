@@ -73,7 +73,10 @@ public abstract class IDevice {
      * @return a string representation of the device.
      */
     @Override
-    public abstract String toString();
+    public String toString()
+    {
+        return getPurpose();
+    }
 
     /**
      * Compares this device to the specified object for equality.
