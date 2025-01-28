@@ -61,7 +61,7 @@ public class IPhone extends IDevice {
      *
      * @param minutesRemaining the remaining minutes.
      */
-    public void setMinutesRemaining(double minutesRemaining) {
+    public void setMinutesRemaining(final double minutesRemaining) {
         this.minutesRemaining = minutesRemaining;
     }
 
@@ -99,7 +99,7 @@ public class IPhone extends IDevice {
      * @return {@code true} if the objects are equal; {@code false} otherwise.
      */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         if(this == obj){
             return true;
         }
@@ -130,7 +130,7 @@ public class IPhone extends IDevice {
      * @param minutesRemaining the remaining minutes to validate.
      * @throws IllegalArgumentException if {@code minutesRemaining < MINIMUM_MINUTES}.
      */
-    private void validateMinutesRemaining(double minutesRemaining) {
+    private void validateMinutesRemaining(final double minutesRemaining) {
         if(minutesRemaining < MINIMUM_MINUTES) {
             throw new IllegalArgumentException("Minutes remaining is less than minutes remaining");
         }
@@ -142,7 +142,7 @@ public class IPhone extends IDevice {
      * @param carrier the carrier name to validate.
      * @throws IllegalArgumentException if {@code carrier} is null or empty.
      */
-    private void validateCarrier(String carrier) {
+    private void validateCarrier(final String carrier) {
         if(carrier == null || carrier.isEmpty()) {
             throw new IllegalArgumentException("Carrier is empty");
         }
