@@ -19,7 +19,7 @@ public class IPad extends IDevice{
     /*
      * Indicates if the IPad has a case.
      */
-    private boolean hasACase;
+    private boolean hasCase;
     /*
      * The operating system version of the IPad.
      */
@@ -28,17 +28,17 @@ public class IPad extends IDevice{
     /**
      * Constructs an IPad object with the specified case status and operating system version.
      *
-     * @param hasACase             whether the IPad has a case.
+     * @param hasCase             whether the IPad has a case.
      * @param operatingSystemVersion the operating system version of the IPad.
      * @throws IllegalArgumentException if {@code operatingSystemVersion} is null or empty.
      */
-    public IPad(final boolean hasACase,
+    public IPad(final boolean hasCase,
                 final String operatingSystemVersion) {
         super(DEVICE_PURPOSE);
 
         validateOperatingSystemVersion(operatingSystemVersion);
 
-        this.hasACase = hasACase;
+        this.hasCase = hasCase;
         this.operatingSystemVersion = operatingSystemVersion;
     }
 
@@ -47,8 +47,8 @@ public class IPad extends IDevice{
      *
      * @return {@code true} if the IPad has a case; {@code false} otherwise.
      */
-    public boolean isHasACase() {
-        return hasACase;
+    public boolean isHasCase() {
+        return hasCase;
     }
 
     /**
@@ -63,10 +63,10 @@ public class IPad extends IDevice{
     /**
      * Sets whether the IPad has a case.
      *
-     * @param hasACase {@code true} if the IPad has a case; {@code false} otherwise.
+     * @param hasCase {@code true} if the IPad has a case; {@code false} otherwise.
      */
-    public void setHasACase(final boolean hasACase) {
-        this.hasACase = hasACase;
+    public void setCase(final boolean hasCase) {
+        this.hasCase = hasCase;
     }
 
     /*
@@ -89,7 +89,7 @@ public class IPad extends IDevice{
         details = "The purpose of this device is " +
                 super.toString() +
                 "This IPad has a case " +
-                hasACase +
+                hasCase +
                 " running on operating system version " +
                 operatingSystemVersion;
         System.out.println(details);
@@ -142,7 +142,7 @@ public class IPad extends IDevice{
         details = "The purpose of this device is " +
                 super.toString() +
                 "This Ipad has a case " +
-                hasACase +
+                hasCase +
                 " and is running on operating system version " +
                 operatingSystemVersion;
         return details;
