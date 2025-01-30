@@ -19,7 +19,7 @@ public class IPhone16 extends IPhone{
     /*
      * Indicates if the IPhone16 has a high-resolution camera.
      */
-    private final boolean hasHighResCamera;
+    private final boolean highResCamera;
     /*
      * Memory capacity of the IPhone16 in gigabytes.
      */
@@ -42,7 +42,7 @@ public class IPhone16 extends IPhone{
 
         validateMemoryGb(memoryGb);
 
-        this.hasHighResCamera = hasHighResCamera;
+        this.highResCamera = hasHighResCamera;
         this.memoryGb = memoryGb;
     }
 
@@ -51,8 +51,8 @@ public class IPhone16 extends IPhone{
      *
      * @return {@code true} if the IPhone16 has a high-resolution camera; {@code false} otherwise.
      */
-    public boolean isHasHighResCamera() {
-        return hasHighResCamera;
+    public boolean HasHighResCamera() {
+        return highResCamera;
     }
 
     /**
@@ -75,7 +75,7 @@ public class IPhone16 extends IPhone{
         String details;
         details = super.toString() +
                   " has HighResCamera: " +
-                  hasHighResCamera +
+                  highResCamera +
                   " memoryGb: " + memoryGb;
         return details;
     }
@@ -97,7 +97,7 @@ public class IPhone16 extends IPhone{
             return false;
         }
         IPhone other = (IPhone) obj;
-        if(super.equals(other) && this.hasHighResCamera == ((IPhone16) obj).isHasHighResCamera()){
+        if(super.equals(other) && this.highResCamera == ((IPhone16) obj).HasHighResCamera()){
             return true;
         }
         return false;
@@ -111,7 +111,7 @@ public class IPhone16 extends IPhone{
      */
     @Override
     public int hashCode() {
-        return Objects.hash(Double.hashCode(this.getMinutesRemaining()), Boolean.hashCode(this.hasHighResCamera));
+        return Objects.hash(Double.hashCode(this.getMinutesRemaining()), Boolean.hashCode(this.highResCamera));
     }
 
     /*

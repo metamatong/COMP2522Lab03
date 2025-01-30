@@ -13,7 +13,7 @@ public class IPhone extends IDevice {
     /**
      * Default purpose of the device.
      */
-    private static final String DEVICE_PURPOSE = "taling";
+    private static final String DEVICE_PURPOSE = "talking";
     /**
      * Minimum allowed value for minutes remaining.
      */
@@ -62,6 +62,8 @@ public class IPhone extends IDevice {
      * @param minutesRemaining the remaining minutes.
      */
     public void setMinutesRemaining(final double minutesRemaining) {
+        validateMinutesRemaining(minutesRemaining);
+
         this.minutesRemaining = minutesRemaining;
     }
 
