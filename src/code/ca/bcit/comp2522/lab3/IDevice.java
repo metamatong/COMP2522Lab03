@@ -31,16 +31,11 @@ public abstract class IDevice {
     private final String purpose;
 
     /**
-     * Constructs a new {@code IDevice} instance with the specified purpose.
-     * Calls {@code validatePurpose(String)} to ensure the purpose is valid.
-     *
-     * @param purpose the purpose of the device.
-     *                Cannot be null or empty.
-     * throws IllegalArgumentException if {@code purpose} is null or empty.
+     * Constructs a new {@code IDevice} instance with the predefined purpose.*
      */
-    IDevice(final String purpose) {
-        validatePurpose(purpose);
-        this.purpose = purpose;
+    IDevice()
+    {
+        this.purpose = "IDevice purpose";
     }
 
     /*
@@ -48,7 +43,8 @@ public abstract class IDevice {
      *
      * return the purpose of the device.
      */
-    private final String getPurpose() {
+    private final String getPurpose()
+    {
         return this.purpose;
     }
 
@@ -104,26 +100,4 @@ public abstract class IDevice {
      */
     @Override
     public abstract int hashCode();
-
-    /**
-     * Validates the purpose of the device.
-     *
-     * <p>
-     *     Ensures that the {@code purpose} is neither null nor blank. If the validation
-     *     fails, an {@code IllegalArgumentException} is thrown.
-     * </p>
-     *
-     * @param purpose the purpose to validate.
-     * throws IllegalArgumentException if {@code purpose} is null or empty.
-     */
-    private static void validatePurpose(final String purpose) {
-
-        final boolean emptyString;
-
-        emptyString = purpose == null || purpose.isBlank();
-
-        if (emptyString) {
-            throw new IllegalArgumentException("purpose cannot be null or empty");
-        }
-    }
 }
