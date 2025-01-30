@@ -35,7 +35,7 @@ public abstract class IDevice {
      */
     IDevice()
     {
-        this.purpose = "IDevice purpose";
+        this.purpose = "IDevice";
     }
 
     /*
@@ -71,7 +71,8 @@ public abstract class IDevice {
     @Override
     public String toString()
     {
-        return getPurpose();
+        String string = "Purpose: " + this.getPurpose() + "\n";
+        return string;
     }
 
     /**
