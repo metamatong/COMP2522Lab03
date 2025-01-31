@@ -10,7 +10,8 @@ package ca.bcit.comp2522.lab3;
  * @author Lucas Liu
  * @version 1.0
  */
-public class IPad extends IDevice{
+public class IPad extends IDevice
+{
     /*
      * Default purpose of the device.
      */
@@ -33,7 +34,8 @@ public class IPad extends IDevice{
      * @throws IllegalArgumentException if {@code operatingSystemVersion} is null or empty.
      */
     public IPad(final boolean hasCase,
-                final String operatingSystemVersion) {
+                final String operatingSystemVersion)
+    {
         super(DEVICE_PURPOSE);
 
         validateOperatingSystemVersion(operatingSystemVersion);
@@ -47,7 +49,8 @@ public class IPad extends IDevice{
      *
      * @return {@code true} if the IPad has a case; {@code false} otherwise.
      */
-    public boolean isHasCase() {
+    public boolean isHasCase()
+    {
         return hasCase;
     }
 
@@ -56,7 +59,8 @@ public class IPad extends IDevice{
      *
      * @return the operating system version.
      */
-    public String getOperatingSystemVersion() {
+    public String getOperatingSystemVersion()
+    {
         return operatingSystemVersion;
     }
 
@@ -65,7 +69,8 @@ public class IPad extends IDevice{
      *
      * @param hasCase {@code true} if the IPad has a case; {@code false} otherwise.
      */
-    public void setCase(final boolean hasCase) {
+    public void setCase(final boolean hasCase)
+    {
         this.hasCase = hasCase;
     }
 
@@ -75,7 +80,8 @@ public class IPad extends IDevice{
      * @param operatingSystemVersion the operating system version.
      * @throws IllegalArgumentException if {@code operatingSystemVersion} is null or empty.
      */
-    public void setOperatingSystemVersion(final String operatingSystemVersion) {
+    public void setOperatingSystemVersion(final String operatingSystemVersion)
+    {
         this.operatingSystemVersion = operatingSystemVersion;
     }
 
@@ -84,7 +90,8 @@ public class IPad extends IDevice{
      * Includes purpose, case status, and operating system version.
      */
     @Override
-    void printDetails() {
+    void printDetails()
+    {
         String details;
         details = "The purpose of this device is " +
                 super.toString() +
@@ -103,7 +110,8 @@ public class IPad extends IDevice{
      * @return {@code true} if the objects are equal; {@code false} otherwise.
      */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj)
+    {
         if(this == obj)
         {
             return true;
@@ -127,7 +135,8 @@ public class IPad extends IDevice{
      * @return the hash code.
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return this.operatingSystemVersion.toLowerCase().hashCode();
     }
 
@@ -137,7 +146,8 @@ public class IPad extends IDevice{
      * @return a string describing the IPad.
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         String details;
         details = "The purpose of this device is " +
                 super.toString() +
@@ -154,8 +164,10 @@ public class IPad extends IDevice{
      * @param operatingSystemVersion the operating system version to validate.
      * @throws IllegalArgumentException if {@code operatingSystemVersion} is null or empty.
      */
-    private static void validateOperatingSystemVersion(final String operatingSystemVersion) {
-        if (operatingSystemVersion == null || operatingSystemVersion.isEmpty()) {
+    private static void validateOperatingSystemVersion(final String operatingSystemVersion)
+    {
+        if(operatingSystemVersion == null || operatingSystemVersion.isEmpty())
+        {
             throw new IllegalArgumentException("Operating system version cannot be empty");
         }
     }

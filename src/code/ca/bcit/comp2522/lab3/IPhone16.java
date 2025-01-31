@@ -10,7 +10,8 @@ import java.util.Objects;
  * @author Kyle Cheon
  * @version 1.0
  */
-public class IPhone16 extends IPhone{
+public class IPhone16 extends IPhone
+{
     /*
      * Minimum allowed memory in gigabytes.
      */
@@ -37,7 +38,8 @@ public class IPhone16 extends IPhone{
     public IPhone16(final double minutesRemaining,
                     final String carrier,
                     final boolean hasHighResCamera,
-                    final int memoryGb) {
+                    final int memoryGb)
+    {
         super(minutesRemaining, carrier);
 
         validateMemoryGb(memoryGb);
@@ -51,7 +53,8 @@ public class IPhone16 extends IPhone{
      *
      * @return {@code true} if the IPhone16 has a high-resolution camera; {@code false} otherwise.
      */
-    public boolean HasHighResCamera() {
+    public boolean HasHighResCamera()
+    {
         return highResCamera;
     }
 
@@ -60,7 +63,8 @@ public class IPhone16 extends IPhone{
      *
      * @return the memory capacity.
      */
-    public int getMemoryGb() {
+    public int getMemoryGb()
+    {
         return memoryGb;
     }
 
@@ -71,7 +75,8 @@ public class IPhone16 extends IPhone{
      * @return a string describing the IPhone16.
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         String details;
         details = super.toString() +
                   " has HighResCamera: " +
@@ -89,15 +94,19 @@ public class IPhone16 extends IPhone{
      * @return {@code true} if the objects are equal; {@code false} otherwise.
      */
     @Override
-    public boolean equals(Object obj) {
-        if(obj == this){
+    public boolean equals(Object obj)
+    {
+        if(obj == this)
+        {
             return true;
         }
-        if(obj == null || !(obj instanceof IPhone16)){
+        if(obj == null || !(obj instanceof IPhone16))
+        {
             return false;
         }
         IPhone other = (IPhone) obj;
-        if(super.equals(other) && this.highResCamera == ((IPhone16) obj).HasHighResCamera()){
+        if(super.equals(other) && this.highResCamera == ((IPhone16) obj).HasHighResCamera())
+        {
             return true;
         }
         return false;
@@ -110,7 +119,8 @@ public class IPhone16 extends IPhone{
      * @return the hash code.
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(Double.hashCode(this.getMinutesRemaining()), Boolean.hashCode(this.highResCamera));
     }
 
@@ -120,8 +130,10 @@ public class IPhone16 extends IPhone{
      * @param memoryGb the memory capacity to validate.
      * @throws IllegalArgumentException if {@code memoryGb <= MINIMUM_MEMORY}.
      */
-    private static void validateMemoryGb(final int memoryGb){
-        if(memoryGb <= MINIMUM_MEMORY){
+    private static void validateMemoryGb(final int memoryGb)
+    {
+        if(memoryGb <= MINIMUM_MEMORY)
+        {
             throw new IllegalArgumentException("Memory gb must be greater than " + MINIMUM_MEMORY);
         }
     }

@@ -157,7 +157,8 @@ public class IPod extends IDevice
             return false;
         }
         IPod ipod = (IPod)obj;
-        if(this.numOfSong != ipod.getNumOfSong()){
+        if(this.numOfSong != ipod.getNumOfSong())
+        {
             return false;
         }
         return true;
@@ -170,7 +171,8 @@ public class IPod extends IDevice
      * @return the hash code.
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hashCode(numOfSong);
     }
 
@@ -182,7 +184,8 @@ public class IPod extends IDevice
      */
     private static void validateNumOfSong(final int numOfSong)
     {
-        if (numOfSong < MINIMUM_SONGS) {
+        if(numOfSong < MINIMUM_SONGS)
+        {
             throw new IllegalArgumentException();
         }
     }
@@ -195,7 +198,8 @@ public class IPod extends IDevice
      */
     private static void validateMaximumVolumeDB(final double maximumVolumeDB)
     {
-        if(maximumVolumeDB < MINIMUM_VOLUME) {
+        if(maximumVolumeDB < MINIMUM_VOLUME)
+        {
             throw new IllegalArgumentException();
         }
     }

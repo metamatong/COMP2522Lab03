@@ -26,14 +26,16 @@ package ca.bcit.comp2522.lab3;
  * @author Lucas Liu
  * @version 1.0
  */
-public abstract class IDevice {
+public abstract class IDevice
+{
 
     private final String purpose;
 
     /**
      * Constructs a new {@code IDevice} instance with the predefined purpose.*
      */
-    IDevice(final String purpose) {
+    IDevice(final String purpose)
+    {
         validatePurpose(purpose);
         this.purpose = purpose;
     }
@@ -113,13 +115,15 @@ public abstract class IDevice {
      * @param purpose the purpose to validate.
      * throws IllegalArgumentException if {@code purpose} is null or empty.
      */
-    private static void validatePurpose(final String purpose) {
+    private static void validatePurpose(final String purpose)
+    {
 
         final boolean emptyString;
 
         emptyString = purpose == null || purpose.isBlank();
 
-        if (emptyString) {
+        if(emptyString)
+        {
             throw new IllegalArgumentException("purpose cannot be null or empty");
         }
     }
