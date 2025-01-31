@@ -128,11 +128,13 @@ public class IPod extends IDevice
     public String toString()
     {
         String details;
-        details = "This Ipod holds " +
-                numOfSong +
-                " has maximum Volume of " +
-                maximumVolumeDB +
-                " DBs";
+        details = "The purpose of this device is " +
+                  super.toString() +
+                  "This Ipod holds " +
+                  numOfSong +
+                  " has maximum Volume of " +
+                  maximumVolumeDB +
+                  " DBs";
         return details;
     }
 
