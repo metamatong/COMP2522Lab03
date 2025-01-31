@@ -1,3 +1,4 @@
+package ca.bcit.comp2522.lab3;
 public class Main {
     public static void main(final String[] args) {
         // Create IPod objects
