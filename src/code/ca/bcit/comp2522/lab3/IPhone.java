@@ -8,7 +8,8 @@ import java.util.Objects;
  * <p>
  * Purpose: {@code DEVICE_PURPOSE = "talking"}
  */
-public class IPhone extends IDevice {
+public class IPhone extends IDevice
+{
 
     /**
      * Default purpose of the device.
@@ -37,7 +38,8 @@ public class IPhone extends IDevice {
      *                                  or if {@code carrier} is null or empty.
      */
     public IPhone(final double minutesRemaining,
-                  final String carrier) {
+                  final String carrier)
+    {
         super(DEVICE_PURPOSE);
 
         validateMinutesRemaining(minutesRemaining);
@@ -52,7 +54,8 @@ public class IPhone extends IDevice {
      *
      * @return the remaining minutes.
      */
-    public double getMinutesRemaining() {
+    public double getMinutesRemaining()
+    {
         return minutesRemaining;
     }
 
@@ -61,7 +64,8 @@ public class IPhone extends IDevice {
      *
      * @param minutesRemaining the remaining minutes.
      */
-    public void setMinutesRemaining(final double minutesRemaining) {
+    public void setMinutesRemaining(final double minutesRemaining)
+    {
         validateMinutesRemaining(minutesRemaining);
 
         this.minutesRemaining = minutesRemaining;
@@ -72,7 +76,8 @@ public class IPhone extends IDevice {
      *
      * @return the carrier name.
      */
-    public String getCarrier() {
+    public String getCarrier()
+    {
         return carrier;
     }
 
@@ -81,7 +86,8 @@ public class IPhone extends IDevice {
      * Includes purpose, remaining minutes, and carrier information.
      */
     @Override
-    void printDetails() {
+    void printDetails()
+    {
         String details;
         details = "The purpose of this device is " +
                 super.toString() +
@@ -101,15 +107,19 @@ public class IPhone extends IDevice {
      * @return {@code true} if the objects are equal; {@code false} otherwise.
      */
     @Override
-    public boolean equals(final Object obj) {
-        if(this == obj){
+    public boolean equals(final Object obj)
+    {
+        if(this == obj)
+        {
             return true;
         }
-        if(obj == null || !(obj instanceof IPhone)){
+        if(obj == null || !(obj instanceof IPhone))
+        {
             return false;
         }
         IPhone other = (IPhone) obj;
-        if(this.minutesRemaining == other.getMinutesRemaining()){
+        if(this.minutesRemaining == other.getMinutesRemaining())
+        {
             return true;
         }
         return false;
@@ -122,7 +132,8 @@ public class IPhone extends IDevice {
      * @return the hash code.
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hashCode(minutesRemaining);
     }
 
@@ -132,8 +143,10 @@ public class IPhone extends IDevice {
      * @param minutesRemaining the remaining minutes to validate.
      * @throws IllegalArgumentException if {@code minutesRemaining < MINIMUM_MINUTES}.
      */
-    private void validateMinutesRemaining(final double minutesRemaining) {
-        if(minutesRemaining < MINIMUM_MINUTES) {
+    private void validateMinutesRemaining(final double minutesRemaining)
+    {
+        if(minutesRemaining < MINIMUM_MINUTES)
+        {
             throw new IllegalArgumentException("Minutes remaining is less than minutes remaining");
         }
     }
@@ -144,8 +157,10 @@ public class IPhone extends IDevice {
      * @param carrier the carrier name to validate.
      * @throws IllegalArgumentException if {@code carrier} is null or empty.
      */
-    private void validateCarrier(final String carrier) {
-        if(carrier == null || carrier.isEmpty()) {
+    private void validateCarrier(final String carrier)
+    {
+        if(carrier == null || carrier.isEmpty())
+        {
             throw new IllegalArgumentException("Carrier is empty");
         }
 
