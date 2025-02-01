@@ -100,6 +100,26 @@ public class IPhone extends IDevice
     }
 
     /**
+     * Returns a string representation of the IPhone.
+     * Includes details from the superclass and additional properties of the IPhone.
+     *
+     * @return a string describing the IPhone.
+     */
+    @Override
+    public String toString()
+    {
+        final String details;
+        details = "The purpose of this device is " +
+                super.toString() +
+                "This IPhone has " +
+                minutesRemaining +
+                " minutes left and is with " +
+                carrier +
+                " DBs";
+        return details;
+    }
+
+    /**
      * Compares this IPhone with another object for equality.
      * Two IPhones are considered equal if they have the same remaining minutes.
      *
@@ -118,7 +138,7 @@ public class IPhone extends IDevice
             return false;
         }
         IPhone other = (IPhone) obj;
-        if(this.minutesRemaining == other.getMinutesRemaining())
+        if(((Double)this.minutesRemaining).equals(other.getMinutesRemaining()))
         {
             return true;
         }
